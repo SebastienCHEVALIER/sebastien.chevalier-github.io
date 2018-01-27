@@ -123,6 +123,10 @@ h3{
   }
 }
 
+#upload{
+  overflow:auto;
+}
+
 .buttonspace {
   margin-top: 20px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
