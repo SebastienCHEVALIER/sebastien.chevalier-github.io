@@ -52,7 +52,7 @@
 
   <main id="main">
     <section id="poe" class="section-bg">
-      <div id ="app">
+      <div id ="app" >
         <div v-if="!upload_visible" class="col-lg-12 text-center">
           <div class="container">
             <header id="title" class="section-header">
@@ -61,6 +61,7 @@
             </header>
           </div>
             <button type="button" class="btn btn-primary btn-lg buttonspace" v-on:click="display_upload">Enregistrer un fichier</button>
+            <div class="wow fadeInUp">
             <p id="verif">Ou Verifier un fichier déja enregistré</p>
             <form class="form-inline">
 
@@ -70,7 +71,8 @@
                 <button class="btn btn-outline-secondary" type="button" onClick="findConctract()">Go</button>
               </div>
             </div>
-            </form>
+          </form>
+          </div>
         </div>
 
         <section id = "upload" v-if="upload_visible" v-cloak>
