@@ -80,7 +80,7 @@
                      <strong>Drop Zone ...</strong>
                    </div>
                    <div v-if="hash">
-                     <h2>Détails du fichier</h2>
+                     <h3>Détails du fichier</h3>
                      <table class="table">
                        <tr><th>Nom</th><td>{{ name }}<span v-if="name.length==32">...</span></td></tr>
                        <tr><th>Type de fichier</th><td>{{ type }}<span v-if="name.length==32">...</span></td></tr>
@@ -95,7 +95,14 @@
                    </div>
                  </div>
                  <div v-if="animate">
-                   <p v-if="!error"><img src="img/animation.gif" /></p>
+                   <p v-if="!error"><div class="spinner">
+                  <div class="rect1"></div>
+                  <div class="rect2"></div>
+                  <div class="rect3"></div>
+                  <div class="rect4"></div>
+                  <div class="rect5"></div>
+                </div>
+                </p>
                    <p v-if="!error"> Merci d'attendre que le contrat soit stocké dans la blockchain Ethereum.
                      Cela peut prendre jusqu'à une minute. Lorsque cela sera fait, vous serez redigié vers la page de confirmation.</p>
                    <p><a v-bind:href="etherscanLink" target="_new">Transaction Blockchain : {{ tx }}</a></p>
