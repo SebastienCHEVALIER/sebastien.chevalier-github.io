@@ -341,7 +341,7 @@ jQuery(document).ready(function( $ ) {
           return (`<table class="table table-hover table-responsive"><tbody><thead class="thead-dark"><th>Input n°${json.inputs.indexOf(input)+1}</th><th></th></thead><tr><td scope="row">Sequence</td><td>${input.sequence}</td></tr><tr><td scope="row">Adresses</td><td>${syntaxHighlight(JSON.stringify(input.addresses,null,2)).replace(/,/g , "").replace('[','').replace(']','')}</td></tr></tbody></table>`)
         });
         outputs=json.outputs.map(output=>{
-          return (`<table class="table table-hover table-responsive"><tbody><thead class="thead-dark"><th>Input n°${json.outputs.indexOf(output)+1}</th><th></th></thead><tr><td scope="row">Valeur</td><td>${output.value}</td></tr><tr><td scope="row">Adresses</td><td>${syntaxHighlight(JSON.stringify(output.addresses,null,2)).replace(/,/g , "").replace('[','').replace(']','')}</td></tr></tbody></table>`)
+          return (`<table class="table table-hover table-responsive"><tbody><thead class="thead-dark"><th>Output n°${json.outputs.indexOf(output)+1}</th><th></th></thead><tr><td scope="row">Valeur</td><td>${output.value}</td></tr><tr><td scope="row">Adresses</td><td>${syntaxHighlight(JSON.stringify(output.addresses,null,2)).replace(/,/g , "").replace('[','').replace(']','')}</td></tr></tbody></table>`)
         });
       }
     document.getElementById('tx-input').innerHTML = inputs;
