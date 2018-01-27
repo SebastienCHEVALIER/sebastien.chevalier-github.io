@@ -459,7 +459,7 @@ const findConctract = () =>{
   var contract = document.getElementById('contract-input').value;
   var isAddress = (/^0x[0-9a-zA-Z]{40}$/.test(contract))
   if (isAddress){
-    window.location.replace("./contract.html#")
+    window.location.replace("./contract.html#"+contract)
   }
   else {
     alert("Entrée invalide")
