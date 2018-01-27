@@ -94,7 +94,8 @@ function drop_handler(ev) {
     return alert('Accès refusé au meta data du fichier');
   }
   console.log ("the file is" , f);
-  app.lastModified = (new Date(f.lastModified)).toString();
+  app.lastModified = f.lastModified;
+  app.lastModifiedDisplay = (new Date(f.lastModified)).toString();
   app.name = f.name.substr(0,32);
   app.size = f.size;
   app.type = f.type.substr(0,32);

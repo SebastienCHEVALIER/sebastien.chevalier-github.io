@@ -101,7 +101,7 @@
                        <tr><th>Nom</th><td>{{ name }}<span v-if="name.length==32">...</span></td></tr>
                        <tr><th>Type de fichier</th><td>{{ type }}<span v-if="name.length==32">...</span></td></tr>
                        <tr><th>Taille</th><td>{{ size }} bytes</td></tr>
-                       <tr><th>Dernière modification</th><td>{{ lastModified }}</td></tr>
+                       <tr><th>Dernière modification</th><td>{{ lastModifiedDisplay }}</td></tr>
                        <tr><th>Hash</th><td>{{ hash }}</td></tr>
                      </table>
                    </div>
