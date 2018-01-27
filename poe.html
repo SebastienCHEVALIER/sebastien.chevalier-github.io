@@ -77,6 +77,8 @@
                      <div class="container">
                        <header id="title" class="section-header">
                     <h3>Glissez un fichier dans la zone de dépot</h3>
+                  </header>
+                 </div>
                    </div>
                    <div v-bind:class="{ dragging: dragging }" v-if="!hash" id="drop_zone" ondrop="drop_handler(event);" ondragover="allowDrop(event)" ondragleave="dragout(event)">
                      <strong>Zone de dépôt ...</strong>
