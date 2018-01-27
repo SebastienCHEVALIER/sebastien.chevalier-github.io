@@ -4,8 +4,8 @@
 }
 
 #title{
-  padding-top:110px;
-  padding-bottom: 60px;
+  padding-top:20px;
+  padding-bottom: 20px;
 }
 
 #drop_zone {
@@ -17,10 +17,6 @@
 
 #contact {
   background-color:#eee
-}
-
-strong{
-  padding-top:100px;
 }
 
 .contacttxt {
@@ -42,6 +38,37 @@ strong{
 
 h3{
   color:black;
+  margin: auto;
+}
+
+#verif{
+  margin-top:80px;
+}
+
+#poe form .input-group{
+  margin:auto;
+  text-align: center;
+  width:40%
+}
+
+#poe .form-control:focus{
+  border-color: #18d26e;
+  box-shadow:0 0 0 0.05rem rgba(0,123,255,.25);
+}
+
+#poe form button{
+  background-color: #18d26e;
+  color:white;
+  border:none;
+}
+
+#poe form button:hover{
+  background-color: #666;
+  color:white;
+}
+
+#poe form button:focus{
+  box-shadow:0 0 0 0.05rem rgba(0,123,255,.25);
 }
 
 .spinner {

@@ -455,6 +455,17 @@ jQuery(document).ready(function( $ ) {
     $("#explorer").addClass('show');
   }
 
+const findConctract = () =>{
+  var contract = document.getElementById('contract-input').value;
+  var isAddress = (/^0x[0-9a-zA-Z]{40}$/.test(contract))
+  if (isAddress){
+    window.location.replace("./contract.html#")
+  }
+  else {
+    alert("Entrée invalide")
+  }
+}
+
 const setTab = function(tabId) {
   $("#explorer-flters li").removeClass('filter-active');
   $(this).addClass('filter-active');

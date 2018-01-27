@@ -60,7 +60,17 @@
               <p>CONNECTEZ VOUS À METAMASK</p>
             </header>
           </div>
-            <button type="button" class="btn btn-primary btn-lg buttonspace" v-on:click="display_upload">Commencer</button>
+            <button type="button" class="btn btn-primary btn-lg buttonspace" v-on:click="display_upload">Enregistrer un fichier</button>
+            <p id="verif">Ou Verifier un fichier déja enregistré</p>
+            <form class="form-inline">
+
+            <div class="input-group mb-3">
+              <input type="text" id="contract-input" class="form-control" placeholder="Contrat d'un fichier à vérifier">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" onClick="findConctract()">Go</button>
+              </div>
+            </div>
+            </form>
         </div>
 
         <section id = "upload" v-if="upload_visible" v-cloak>
