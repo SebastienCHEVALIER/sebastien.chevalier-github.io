@@ -74,14 +74,13 @@
                  </div>
                  <div v-if="!web3Missing">
                    <div v-if="!hash">
-                     <h2>Glissez un fichier dans la dropzone</h2>
+                    <h3>Glissez un fichier dans la dropzone</h3>
                    </div>
                    <div v-bind:class="{ dragging: dragging }" v-if="!hash" id="drop_zone" ondrop="drop_handler(event);" ondragover="allowDrop(event)" ondragleave="dragout(event)">
                      <strong>Drop Zone ...</strong>
                    </div>
                    <div v-if="hash">
                      <h2>Détails du fichier</h2>
-                     <hr class="star-light">
                      <table class="table">
                        <tr><th>Nom</th><td>{{ name }}<span v-if="name.length==32">...</span></td></tr>
                        <tr><th>Type de fichier</th><td>{{ type }}<span v-if="name.length==32">...</span></td></tr>
