@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Sébastien CHEVALIER</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="img/favicon.svg" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/freelancer.css" rel="stylesheet">
+
+  <!-- Nottario CSS -->
+  <link href="css/stylepoe.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!-- Custom Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+  <header id="header">
+    <div class="container-fluid">
+      <div id="logo" class="pull-left">
+        <h1><a href="#intro" class="scrollto">Sébastien CHEVALIER</a></h1>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li ><a href="./index.html">Home</a></li>
+          <li><a href="./explorateurblockchain.html">Explorateur Blockchain</a></li>
+          <li class="menu-active"><a href="#">Proof of Existence</a></li>
+          <li ><a href="./erc20.html">ERC20 Token</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="poe" class="section-bg">
+      <div id ="app">
+        <div v-if="!upload_visible" class="col-lg-12 text-center">
+          <div class="container">
+            <header class="section-header">
+              <h3>Proof of Existence</h3>
+              <p>CONNECTEZ VOUS À METAMASK</p>
+            </header>
+          </div>
+            <button type="button" class="btn btn-primary btn-lg buttonspace" v-on:click="display_upload">Commencer</button>
+        </div>
+
+        <section id = "upload" v-if="upload_visible" v-cloak>
+           <div class="container">
+             <div class="row">
+               <div class="col-lg-12 text-center">
+                 <div v-if="web3Missing">
+                   <p>
+                      Merci d'installer l'extension <a href="https://metamask.io/" target="_blank">Metamask</a> pour Google Chrome ou Firefox pour utiliser Blockizor
+                   </p>
+                 </div>
+                 <div v-if="!web3Missing">
+                   <div v-if="!hash">
+                     <h2>Drag and drop a file into the dropzone</h2>
+                     <hr class="star-light">
+                   </div>
+                   <div v-bind:class="{ dragging: dragging }" v-if="!hash" id="drop_zone" ondrop="drop_handler(event);" ondragover="allowDrop(event)" ondragleave="dragout(event)">
+                     <strong>Drop Zone ...</strong>
+                   </div>
+                   <div v-if="hash">
+                     <h2>Détails du fichier</h2>
+                     <hr class="star-light">
+                     <table class="table">
+                       <tr><th>Nom</th><td>{{ name }}<span v-if="name.length==32">...</span></td></tr>
+                       <tr><th>Type de fichier</th><td>{{ type }}<span v-if="name.length==32">...</span></td></tr>
+                       <tr><th>Taille</th><td>{{ size }} bytes</td></tr>
+                       <tr><th>Dernière modification</th><td>{{ lastModified }}</td></tr>
+                       <tr><th>Hash</th><td>{{ hash }}</td></tr>
+                     </table>
+                   </div>
+                   <div class="buttonspace" v-if="!animate">
+                     <button type="button" class="btn btn-primary btn-lg" :disabled="!hash || !name || hash.length!=66" v-on:click="create_contract">Enregistrer</button>
+                     <button type="button" class="btn btn-danger btn-lg"  v-on:click="cancel_upload">Annuler</button>
+                   </div>
+                 </div>
+                 <div v-if="animate">
+                   <p v-if="!error"><img src="img/animation.gif" /></p>
+                   <p v-if="!error"> Merci d'attendre que le contrat soit stocké dans la blockchain Ethereum.
+                     Cela peut prendre jusqu'à une minute. Lorsque cela sera fait, vous serez redigié vers la page de confirmation.</p>
+                   <p><a v-bind:href="etherscanLink" target="_new">Transaction Blockchain : {{ tx }}</a></p>
+                   <p v-if="error">Une erreur est survenue. L'erreur est : "{{ error }}".</p>
+                 </div>
+               </div>
+             </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-top">
+
+    </div>
+  </footer>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+
+      <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="js/solidity.js"></script>
+    <script src="js/nottario.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

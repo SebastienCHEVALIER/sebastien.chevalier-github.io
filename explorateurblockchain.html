@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Explorateur Blockchain</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Favicons -->
+  <link href="img/favicon.svg" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header id="header">
+    <div class="container-fluid">
+      <div id="logo" class="pull-left">
+        <h1><a href="#intro" class="scrollto">Sébastien CHEVALIER</a></h1>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a href="./index.html">Home</a></li>
+          <li class="menu-active"><a href="#">Explorateur Blockchain</a></li>
+          <li><a href="./poe.html">Proof of Existence</a></li>
+          <li ><a href="./erc20.html">ERC20 Token</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section id="portfolio"  class="section-bg" >
+      <div class="container">
+
+        <header class="section-header">
+          <h3 class="section-title">Explorateur Blockchain</h3>
+          <p>Veuillez choisir une Blockchain</p>
+        </header>
+
+        <div class="row portfolio-container">
+
+          <div class="col-lg-3 col-md-6 portfolio-item filter-app wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio/btc.png" class="img-fluid" alt="">
+                <a href="#bitcoin" onClick='updtBlockchain("bitcoin")' class="link-details" title="Select"><i class="ion ion-android-done"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="#bitcoin" onClick='updtBlockchain("bitcoin")'>Bitcoin</a></h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio/eth.png" class="img-fluid" alt="">
+                <a href="#ethereum" onClick='updtBlockchain("ethereum")' class="link-details" title="Select"><i class="ion ion-android-done"></i></a>
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="#ethereum" onClick='updtBlockchain("ethereum")'>Ethereum</a></h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio/dash.png" class="img-fluid" alt="">
+              <a href="#dash" onClick='updtBlockchain("dash")' class="link-details" title="Select"><i class="ion ion-android-done"></i></a>
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="#dash" onClick='updtBlockchain("dash")'>Dash</a></h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 portfolio-item filter-card wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio/litecoin.png" class="img-fluid" alt="">
+                <a href="#litecoin" onClick='updtBlockchain("litecoin")' class="link-details" title="Select"><i class="ion ion-android-done"></i></a>
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="#litecoin" onClick='updtBlockchain("litecoin")'>Litecoin</a></h4>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="explorer"  class="section-bg" >
+      <div class="container">
+
+        <header class="section-header">
+          <h3 class="section-title" id="explorer-title"><img src="img/BTC-alt.svg" alt="Bitcoin"> Bitcoin</h3>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="explorer-flters">
+              <li id="tabMain" onClick='setTab("#info")' class="filter-active" onClick="">Info</li>
+              <li id="tabBloc" onClick='setTab("#bloc")'>Bloc</li>
+              <li id="tabAdress" onClick='setTab("#adress")'>Adresse</li>
+              <li id="tabTx" onClick='setTab("#tx")'>Transaction</li>
+            </ul>
+          </div>
+        </div>
+        <div id="info" class='explorer-data'>
+          <div id="nblocs">
+              <i class="ion-cube"></i>
+              <h3>Nombre de blocs</h3>
+              <p id="height"></p>
+          </div>
+          <a class="btn float-right" data-toggle="collapse" href="#info-collapse" role="button" aria-expanded="false" aria-controls="info-collapse">
+            Raw Data <i class="ion ion-eye"></i>
+          </a>
+        <div class="collapse" id="info-collapse">
+          <pre id="info-rawData" class="rawData" ></pre>
+        </div>
+          <table class="table table-hover table-responsive data-table">
+          <tbody id="infoBlockcypher">
+            <tr>
+              <td scope="row">Dernière mise à jour</td>
+              <td id="time"></td>
+            </tr>
+            <tr>
+              <td scope="row">Hash du dernier bloc</td>
+              <td id="hash"></td>
+            </tr>
+            <tr>
+              <td scope="row">Hash de l'avant dernier bloc</td>
+              <td id="lastBlock"></td>
+            </tr>
+            <tr>
+              <td scope="row">Transactions en attente de confirmation</td>
+              <td id="unconfirmed1"></td>
+            </tr>
+            <tr>
+              <td scope="row">Frais haut<a tabindex="0" class="help" role="button" data-toggle="popover" data-trigger="focus" data-content="Frais par kb en satoshi ou prix du gaz en wei pour qu'une transaction soit confirmée dans 1 à 2 blocs.">?</a></td>
+              <td id="maxfees"></td>
+            </tr>
+            <tr>
+              <td scope="row">Frais moyen <a tabindex="0" class="help" role="button" data-toggle="popover" data-trigger="focus" data-content="Frais par kb en satoshi ou prix du gaz en wei pour qu'une transaction soit confirmée dans 3 à 6 blocs.">?</a></td>
+              <td id="medfees"></td>
+            </tr>
+            <tr>
+              <td scope="row">Frais bas <a tabindex="0" class="help" role="button" data-toggle="popover" data-trigger="focus" data-content="Frais par kb en satoshi ou prix du gaz en wei pour qu'une transaction soit confirmée dans 7 blocs ou plus.">?</a></td>
+              <td id="minfees"></td>
+            </tr>
+            <tr>
+              <td scope="row">Nombre de bloc au dernier Fork</td>
+              <td id="lastFork"></td>
+            </tr>
+            <tr>
+              <td scope="row">Hash du dernier Fork</td>
+              <td id="hashLastFork"></td>
+            </tr>
+          </tbody>
+          <tbody id="infoChainSo">
+            <tr>
+              <td scope="row">Difficulté de minage</td>
+              <td id="difficulty"></td>
+            </tr>
+            <tr>
+              <td scope="row">Transactions en attente de confirmation</td>
+              <td id="unconfirmed2"></td>
+            </tr>
+            <tr>
+              <td scope="row">Prix</td>
+              <td id="price"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="bloc" class='explorer-data'>
+        <form class="form-inline">
+        <div class="input-group mb-3">
+          <input type="text" id="txt-block" class="form-control" placeholder="Hash ou hauteur d'un bloc">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" onClick="updtBlock()">Go</button>
+          </div>
+        </div>
+        </form>
+        <div class="data">
+        <a class="btn float-right" data-toggle="collapse" href="#bloc-collapse" role="button" aria-expanded="false" aria-controls="bloc-collapse">
+          Raw Data <i class="ion ion-eye"></i>
+        </a>
+        <div class="collapse" id="bloc-collapse">
+          <pre id="bloc-rawData" class="rawData"></pre>
+        </div>
+          <table class="table table-hover table-responsive data-table">
+          <tbody id="bloc">
+            <tr>
+              <td scope="row">Hash</td>
+              <td id="bloc-hash"></td>
+            </tr>
+            <tr>
+              <td scope="row">Hauteur</td>
+              <td id="bloc-height"></td>
+            </tr>
+            <tr id="depth">
+              <td scope="row">Profondeur</td>
+              <td id="bloc-depth"></td>
+            </tr>
+
+              <tr>
+                <td scope="row">Bloc précèdent</td>
+                <td id="bloc-last"></td>
+              </tr>
+              <tr>
+              <td scope="row">Total<a tabindex="0" class="help" role="button" data-toggle="popover" data-trigger="focus" data-content="Le total de satoshi/wei échangés dans ce bloc.">?</a></td>
+              <td id="bloc-total"></td>
+            </tr>
+            <tr>
+              <td scope="row">Frais <a tabindex="0" class="help" role="button" data-toggle="popover" data-trigger="focus" data-content="Le total de frais en satoshi/wei collectés par les mineurs sur ce bloc.">?</a></td>
+              <td id="bloc-fees"></td>
+            </tr>
+            <tr>
+              <td scope="row">Taille (en bytes)</td>
+              <td id="bloc-size"></td>
+            </tr>
+            <tr>
+              <td scope="row">Timestamp </td>
+              <td id="bloc-time"></td>
+            </tr>
+            <tr>
+              <td scope="row">Nonce</td>
+              <td id="bloc-nonce"></td>
+            </tr>
+            <tr>
+              <td scope="row">Racine de Merkle</td>
+              <td id="bloc-merkle"></td>
+            </tr>
+            <tr>
+              <td scope="row">Nombre de transactions</td>
+              <td id="bloc-ntx"></td>
+            </tr>
+            <tr>
+              <td scope="row">Transactions</td>
+              <td id="bloc-txs"></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <div id="tx" class='explorer-data'>
+        <form class="form-inline">
+        <div class="input-group mb-3">
+          <input type="text" id="txt-trans" class="form-control" placeholder="Hash d'une transaction">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" onClick="updtTrans()">Go</button>
+          </div>
+        </div>
+      </form>
+      <div class="data">
+      <a class="btn float-right" data-toggle="collapse" href="#tx-collapse" role="button" aria-expanded="false" aria-controls="tx-collapse">
+        Raw Data <i class="ion ion-eye"></i>
+      </a>
+      <div class="collapse" id="tx-collapse">
+        <pre id="tx-rawData" class="rawData" ></pre>
+      </div>
+
+          <table class="table table-hover table-responsive data-table">
+          <tbody >
+            <tr>
+              <td scope="row">Hash</td>
+              <td id="tx-hash"></td>
+            </tr>
+            <tr>
+              <td scope="row">Hash du Bloc</td>
+              <td id="tx-blocHash"></td>
+            </tr>
+            <tr>
+            <tr>
+              <td scope="row">Hauteur du Bloc</td>
+              <td id="tx-blocHeight"></td>
+            </tr>
+            <tr id="adresses">
+              <td scope="row">Adresses</td>
+              <td id="tx-addresses"></td>
+            </tr>
+              <tr>
+              <td scope="row">Total<a tabindex="0" class="help" role="button" data-toggle="popover" data-trigger="focus" data-content="En satoshi/wei">?</a></td>
+              <td id="tx-total"></td>
+            </tr>
+            <tr>
+              <td scope="row">Frais <a tabindex="0" class="help" role="button" data-toggle="popover" data-trigger="focus" data-content="En satoshi/wei">?</a></td>
+              <td id="tx-fees"></td>
+            </tr>
+            <tr id="size">
+              <td scope="row">Taille (en bytes)</td>
+              <td id="tx-size"></td>
+            </tr>
+            <tr>
+              <td scope="row">Date de confirmation </td>
+              <td id="tx-time"></td>
+            </tr>
+            <tr id ="dblSpend">
+              <td scope="row">Double dépense</td>
+              <td id="tx-dblSpend"></td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="inputs">
+          <h4 >Inputs</h4>
+          <div id="tx-input"></div>
+        </div>
+        <div id="outputs">
+          <h4 >Outputs</h4>
+          <div id="tx-output"></div>
+        </div>
+        </div>
+      </div>
+
+      <div id="adress" class='explorer-data'>
+        <form class="form-inline">
+        <div class="input-group mb-3">
+          <input type="text" id="txt-adress" class="form-control" placeholder="Adresse">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" onClick="updtAdress()">Go</button>
+          </div>
+        </div>
+      </form>
+      <div class="data">
+      <a class="btn float-right" data-toggle="collapse" href="#adress-collapse" role="button" aria-expanded="false" aria-controls="adress-collapse">
+        Raw Data <i class="ion ion-eye"></i>
+      </a>
+      <div class="collapse" id="adress-collapse">
+        <pre id="adress-rawData" class="rawData" ></pre>
+      </div>
+          <table class="table table-hover table-responsive data-table">
+          <tbody >
+            <tr>
+              <td scope="row">Adresse</td>
+              <td id="adress-hash"></td>
+            </tr>
+            <tr>
+              <td scope="row">Total Reçu</td>
+              <td id="adress-totalRecu"></td>
+            </tr>
+            <tr>
+            <tr id='totalSent'>
+              <td scope="row">Total envoyé</td>
+              <td id="adress-totalSent"></td>
+            </tr>
+            <tr>
+              <td scope="row">Balance</td>
+              <td id="adress-balance"></td>
+            </tr>
+              <tr>
+              <td scope="row">Nombre de transactions</td>
+              <td id="adress-ntx"></td>
+            </tr>
+            <tr>
+              <td scope="row">Transactions</td>
+              <td id="adress-txs"></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <div class="footer-top">
+    </div>
+  </footer>
+
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

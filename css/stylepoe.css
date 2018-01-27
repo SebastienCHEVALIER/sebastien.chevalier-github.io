@@ -1,0 +1,74 @@
+#poe{
+  padding-top:260px;
+  padding-bottom:220px;
+}
+
+#drop_zone {
+  border: 5px dashed black;
+  width:  100%;
+  height: 200px;
+}
+
+#contact {
+  background-color:#eee
+}
+
+.contacttxt {
+  font-size: 16px;
+}
+
+.abi {
+  text-align:left;
+}
+
+#blockchain {
+  background-color:#eee
+}
+
+.buttonspace {
+  margin-top: 20px;
+  text-shadow: 0px 0px 3px #00ff76;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size:18px;
+}
+
+.buttonspace:active:hover {
+  margin-top: 20px;
+  background-color: #18d26e;
+  border-color: ##18d26e;
+}
+
+.wrapper {
+	border: 7px dotted #000;
+	box-shadow: inset 0 -3px 0 0 #000, 0 3px 0 0 #000;
+}
+
+.certificate-title {
+   text-align:center;
+}
+
+.dragging {
+  background-color: red;
+}
+
+.icon-padding {
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.verified {
+       margin-top: 20px;
+       color: green;
+       font-size: 20px;
+}
+.unverified {
+       margin-top: 20px;
+       color: red;
+       font-size: 20px;
+}
