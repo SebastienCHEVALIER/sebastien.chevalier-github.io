@@ -52,6 +52,9 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size:14px;
+}
+
+.btn-danger{
   background-color: #dc3545;
   border-color: #dc3545;
 }
