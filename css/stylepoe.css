@@ -5,7 +5,7 @@
 
 #poe .section-header{
   padding-top:40px;
-  padding-bottom: 60px;
+  padding-bottom: 70px;
 }
 
 #drop_zone {
@@ -31,6 +31,15 @@
   background-color:#eee
 }
 
+#web3Missing{
+  padding-top:160px;
+  padding-bottom: 100px;
+}
+
+h3{
+  color:black;
+}
+
 .buttonspace {
   margin-top: 20px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -42,7 +51,7 @@
 .buttonspace:active:hover {
   margin-top: 20px;
   background-color: #18d26e;
-  border-color: ##18d26e;
+  border-color: #18d26e;
 }
 
 .btn-primary, .btn-danger{
@@ -50,7 +59,12 @@
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  font-size:14px;
+  font-size:18px;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
+  background-color: #18d26e;
+  border-color: #18d26e;
 }
 
 .btn-danger{
