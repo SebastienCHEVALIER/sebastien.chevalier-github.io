@@ -19,8 +19,8 @@ var app = new Vue({
       //console.log('here', web3.eth.accounts, web3.eth.accounts.length);
       if (typeof web3 === 'undefined') {
         app.web3Missing = true;
-      } 
-   }, 1000);   
+      }
+   }, 1000);
   },
   methods: {
     display_upload: function() {
@@ -53,7 +53,7 @@ var app = new Vue({
         console.log(err, data);
         if (err)  {
             setInterval(function(){
-              web3.eth.getTransactionReceipt(app.tx , function(err,d){ 
+              web3.eth.getTransactionReceipt(app.tx , function(err,d){
                 if(!err && d.contractAddress) {
                   window.location = 'contract.html#' + d.contractAddress;
                 }
@@ -94,7 +94,7 @@ function drop_handler(ev) {
     return alert('Accès refusé au meta data du fichier');
   }
   console.log ("the file is" , f);
-  app.lastModified = f.lastModified;
+  app.lastModified = new Date(f.lastModified);
   app.name = f.name.substr(0,32);
   app.size = f.size;
   app.type = f.type.substr(0,32);
@@ -103,8 +103,8 @@ function drop_handler(ev) {
     //console.log('onload!',event);
     app.hash = web3.sha3(event.target.result);
     console.log("hash is " + app.hash);
-    
-    
+
+
 
   };
   reader.readAsText(f);
