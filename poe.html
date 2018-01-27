@@ -55,7 +55,7 @@
       <div id ="app">
         <div v-if="!upload_visible" class="col-lg-12 text-center">
           <div class="container">
-            <header class="section-header">
+            <header id="title" class="section-header">
               <h3>Proof of Existence</h3>
               <p>CONNECTEZ VOUS À METAMASK</p>
             </header>
@@ -74,10 +74,12 @@
                  </div>
                  <div v-if="!web3Missing">
                    <div v-if="!hash">
-                    <h3>Glissez un fichier dans la dropzone</h3>
+                     <div class="container">
+                       <header id="title" class="section-header">
+                    <h3>Glissez un fichier dans la zone de dépot</h3>
                    </div>
                    <div v-bind:class="{ dragging: dragging }" v-if="!hash" id="drop_zone" ondrop="drop_handler(event);" ondragover="allowDrop(event)" ondragleave="dragout(event)">
-                     <strong>Drop Zone ...</strong>
+                     <strong>Zone de dépôt ...</strong>
                    </div>
                    <div v-if="hash">
                      <h3>Détails du fichier</h3>

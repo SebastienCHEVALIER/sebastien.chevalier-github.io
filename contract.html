@@ -70,7 +70,11 @@
                  <tr><th>Hash</th><td>{{ hash }}</td></tr>
                  <tr><th>Enregistré dans la blockchain le </th><td>{{ timestamp }}</td></tr>
                </table>
+               <div class="container">
+                 <header class="section-header">
                <h3>Pour vérifier l'authenticité de votre fichier, glissez le dans la zone ci-dessous</h3>
+             </header>
+           </div>
                <div id="drop_zone" v-bind:class="{ dragging: dragging }" ondrop="verify_file(event);" ondragover="allowDrop(event)" ondragleave="dragout(event)">
                  <strong>Zone de dépôt ...</strong>
                </div>

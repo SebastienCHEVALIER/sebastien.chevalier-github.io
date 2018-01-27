@@ -1,11 +1,11 @@
 #poe{
-  padding-top:200px;
+  padding-top:140px;
   padding-bottom:160px;
 }
 
-#poe .section-header{
-  padding-top:40px;
-  padding-bottom: 70px;
+#title{
+  padding-top:110px;
+  padding-bottom: 60px;
 }
 
 #drop_zone {
@@ -17,6 +17,10 @@
 
 #contact {
   background-color:#eee
+}
+
+strong{
+  padding-top:100px;
 }
 
 .contacttxt {
@@ -32,8 +36,8 @@
 }
 
 #web3Missing{
-  padding-top:160px;
-  padding-bottom: 100px;
+  padding-top:200px;
+  padding-bottom: 110px;
 }
 
 h3{
@@ -53,7 +57,7 @@ h3{
   height: 100%;
   width: 6px;
   display: inline-block;
-  
+
   -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
   animation: sk-stretchdelay 1.2s infinite ease-in-out;
 }
