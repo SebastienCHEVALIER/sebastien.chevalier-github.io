@@ -79,8 +79,8 @@
                  <strong>Zone de dépôt ...</strong>
                </div>
 
-               <div v-if="verified && droppedHash">VERIFIÉ</div>
-               <div v-if="!verified && droppedHash">NON VERIFIÉ</div>
+               <div clase="alert alert-success" v-if="verified && droppedHash">VERIFIÉ</div>
+               <div clase="alert alert-danger" v-if="!verified && droppedHash">NON VERIFIÉ</div>
 
              </div>
            </div>
