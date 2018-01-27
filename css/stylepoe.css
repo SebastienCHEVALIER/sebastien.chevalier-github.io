@@ -40,6 +40,24 @@
   border-color: ##18d26e;
 }
 
+.btn-primary{
+  margin-top: 20px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size:14px;
+}
+
+.btn-danger{
+  margin-top: 20px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size:14px;
+  background-color: #a935dd;
+  border-color: #a935dd;
+}
+
 .wrapper {
 	border: 7px dotted #000;
 	box-shadow: inset 0 -3px 0 0 #000, 0 3px 0 0 #000;
