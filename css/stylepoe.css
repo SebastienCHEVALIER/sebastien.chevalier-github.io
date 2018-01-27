@@ -52,6 +52,8 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size:14px;
+  background-color: #dc3545;
+  border-color: #dc3545;
 }
 
 .wrapper {
@@ -64,7 +66,7 @@
 }
 
 .dragging {
-  background-color: red;
+  background-color: #18d26e;
 }
 
 .icon-padding {
