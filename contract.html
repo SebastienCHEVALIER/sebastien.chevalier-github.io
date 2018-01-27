@@ -43,7 +43,7 @@
         <ul class="nav-menu">
           <li ><a href="./index.html">Home</a></li>
           <li><a href="./explorateurblockchain.html">Explorateur Blockchain</a></li>
-          <li class="menu-active"><a href="./>poe.html">Proof of Existence</a></li>
+          <li class="menu-active"><a href="./poe.html">Proof of Existence</a></li>
           <li ><a href="./erc20.html">ERC20 Token</a></li>
         </ul>
       </nav>
@@ -70,14 +70,13 @@
                  <tr><th>Hash</th><td>{{ hash }}</td></tr>
                  <tr><th>Enregistré dans la blockchain le </th><td>{{ timestamp }}</td></tr>
                </table>
-               <h2>Pour vérifier l'authenticité de votre fichier, glissez le dans la zone ci-dessous</h2>
-               <hr class="star-light">
+               <h3>Pour vérifier l'authenticité de votre fichier, glissez le dans la zone ci-dessous</h3>
                <div id="drop_zone" v-bind:class="{ dragging: dragging }" ondrop="verify_file(event);" ondragover="allowDrop(event)" ondragleave="dragout(event)">
                  <strong>Zone de dépôt ...</strong>
                </div>
 
-               <div v-if="verified && droppedHash">VERIFIED</div>
-               <div v-if="!verified && droppedHash">NOT VERIFIED</div>
+               <div v-if="verified && droppedHash">VERIFIÉ</div>
+               <div v-if="!verified && droppedHash">NON VERIFIÉ</div>
 
              </div>
            </div>
